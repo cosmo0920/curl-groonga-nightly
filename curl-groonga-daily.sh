@@ -23,5 +23,5 @@ fi
 tar xzvf groonga-*.tar.gz
 
 cd groonga-*
-./configure
+./configure --with-zlib --disable-zeromq --enable-mruby --without-libstemmer
 make -j `/usr/sbin/sysctl -n hw.ncpu`
