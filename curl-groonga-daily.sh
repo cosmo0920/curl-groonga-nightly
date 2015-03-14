@@ -13,6 +13,15 @@ fi
 find ./*.zip -maxdepth 1 -type f -ctime +${keep_n_days} | \
   xargs $XARGS_NO_RUN rm
 # curl
-set -x
 curl --fail -O "http://packages.groonga.org/nightly/groonga-${GROONGAVER}.${DATE}.tar.gz"
 
+# building Groonga
+if [ -d groonga-* ]; then
+    rm -rf groonga-*
+fi
+
+tar xzvf groonga-*.tar.gz
+
+cd groonga-*
+./configure
+make -j `/usr/sbin/sysctl -n hw.ncpu`
