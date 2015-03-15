@@ -20,8 +20,8 @@ if [ -d groonga-* ]; then
     rm -rf groonga-*
 fi
 
-tar xzvf groonga-*.tar.gz
+tar xzvf groonga-${GROONGAVER}.${DATE}.tar.gz
 
-cd groonga-*
+cd groonga-${GROONGAVER}.${DATE}
 ./configure --with-zlib --disable-zeromq --enable-mruby --without-libstemmer
 make -j `/usr/sbin/sysctl -n hw.ncpu`
