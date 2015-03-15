@@ -16,8 +16,8 @@ find ./*.tar.gz -maxdepth 1 -type f -ctime +${keep_n_days} | \
 curl --fail -O "http://packages.groonga.org/nightly/groonga-${GROONGAVER}.${DATE}.tar.gz"
 
 # building Groonga
-find ./groonga-* -maxdepth 1 -type f -ctime +1 | \
-  xargs $XARGS_NO_RUN rm -rf
+find ./ -maxdepth 1 -type f -ctime +1 | \
+  xargs $XARGS_NO_RUN rm -rf groonga-*
 
 tar xzvf groonga-${GROONGAVER}.${DATE}.tar.gz
 
