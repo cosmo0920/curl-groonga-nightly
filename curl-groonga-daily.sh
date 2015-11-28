@@ -1,4 +1,4 @@
-# specify MariaDB and Mroonga version
+# specify Groonga version
 export GROONGAVER="5.1.0"
 # get Date
 # e.g. # => 2014.07.01
