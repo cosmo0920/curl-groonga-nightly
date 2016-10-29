@@ -22,5 +22,5 @@ find ./ -maxdepth 1 -type f -ctime +${keep_n_days} | \
 tar xzvf groonga-${GROONGAVER}.${DATE}.tar.gz
 
 cd groonga-${GROONGAVER}.${DATE}
-./configure --with-zlib --disable-zeromq --enable-mruby --without-libstemmer
+./configure --with-zlib --disable-zeromq --enable-mruby --without-libstemmer PKG_CONFIG_PATH=`brew --prefix openssl`/lib/pkgconfig:$PKG_CONFIG_PATH
 make -j `/usr/sbin/sysctl -n hw.ncpu`
