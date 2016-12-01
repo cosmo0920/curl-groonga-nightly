@@ -20,4 +20,4 @@ before_install: |
     pcre
 
 script:
-  bash ./curl-groonga-nightly.sh
+  bash ./curl-groonga-daily.sh
