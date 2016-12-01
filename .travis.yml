@@ -20,4 +20,4 @@ before_install: |
     pcre
 
 script:
-  bash ./curl-groonga-daily.sh
+  travis_wait 30 bash ./curl-groonga-daily.sh > /dev/null
