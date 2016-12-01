@@ -1,0 +1,23 @@
+language: ruby
+
+matrix:
+  include:
+    - rvm: 2.2.5
+      os: osx
+      env: PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
+
+before_install: |
+  brew update > /dev/null
+  brew outdated pkg-config || brew upgrade pkg-config
+  brew outdated coreutils || brew upgrade coreutils
+  brew reinstall libtool
+  brew install \
+    coreutils \
+    msgpack \
+    libevent \
+    mecab \
+    mecab-ipadic \
+    pcre
+
+script:
+  bash ./curl-groonga-nightly.sh
