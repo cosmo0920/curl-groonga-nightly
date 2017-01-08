@@ -1,5 +1,5 @@
 # specify Groonga version
-export GROONGAVER="6.1.2"
+export GROONGAVER="6.1.3"
 # get Date
 # e.g. # => 2014.07.01
 export DATE="`date +\"%Y.%m.%d\"`"
